@@ -8,48 +8,50 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
+import Shipment from './components/Shipment/Shipment';
+import Login from './components/Login/Login';
+import { createContext, useState } from 'react';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+
+export const UserContext = createContext();
+
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
+
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Header></Header>
-      {/*<Router>
-        <Switch>
-          <Route path="/shop">
-            <Shop></Shop>
-          </Route>
-          <Route path="/review">
-            <Review></Review>
-          </Route>
-          <Route path="/inventory">
-            <Inventory></Inventory>
-          </Route>
-          <Route exact path="/">
-            <Shop></Shop>
-          </Route>
-          <Route path="/product/:productKey">
-            <ProductDetail></ProductDetail>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router> */}
 
       <Routes>
         <Route path="/" element={<Shop />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/review" element={<Review />} />
-        <Route path="/inventory" element={<Inventory />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/inventory"
+          element={
+            <ProtectedRoute>
+              <Inventory />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/shipment"
+          element={
+            <ProtectedRoute>
+              <Shipment />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/product/:productKey" element={<ProductDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-
-    </div>
+    </UserContext.Provider>
   );
 }
 

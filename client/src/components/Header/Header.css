@@ -22,3 +22,13 @@ nav a {
 nav a:hover {
     background-color: gray;
 }
+
+.signInout {
+    color: white;
+    background-color: black;
+}
+
+.signInout2 {
+    color:  rgb(216, 248, 74);
+    background-color: black;
+}

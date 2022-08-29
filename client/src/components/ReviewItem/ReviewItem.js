@@ -6,7 +6,7 @@ const ReviewItem = (props) => {
         borderBottom: '1px solid lightgray',
         marginBottom: '5px',
         paddingBottom: '5px',
-        marginLeft: '200px'
+        // marginLeft: '200px'
     };
     return (
         <div style={reviewItemStyle} className="review-item">
