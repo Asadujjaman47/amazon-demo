@@ -48,7 +48,6 @@ function Login() {
             // equivalent to history.goBack() in V5
             navigate(-2);
         }
-
     }
 
 

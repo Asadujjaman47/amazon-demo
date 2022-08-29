@@ -2,6 +2,7 @@ Git branch:
 37.router   =>  initial stage of peoject (before start 37 moudule)
 37.module   =>  finished the 37 module
 V6.router   =>  apply V6 router
-deploy  =>
+deploy  => firebase
+server-mongodb  =>  conition: amazon-server must running in background
 
-main branch merge with V6.router
+main branch merge with server-mongodb
