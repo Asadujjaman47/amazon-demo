@@ -1,2 +1,2 @@
 # amazon-demo
-[forebase link](https://fir-cebd6.web.app/)
+[firebase link](https://fir-cebd6.web.app/)
